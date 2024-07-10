@@ -1,0 +1,119 @@
+/* Navbar component CSS */
+
+/* Basic styling for navbar */
+.navbar {
+  background: linear-gradient(to right, rgb(255, 179, 0), #a9a9a9);
+
+
+  padding: 10px 0;
+}
+
+.navbar .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.nav-links {
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li {
+  position: relative; /* Ensure dropdown positioning relative to this */
+  margin-right: 10px; /* Adjusted for better spacing */
+}
+
+.nav-links li a {
+  display: block;
+  padding: 15px;
+  text-decoration: none;
+  color: #fff;
+  transition: color 0.3s ease;
+}
+
+/* Dropdown container */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #000000;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Show dropdown content on hover */
+.nav-links li:hover .dropdown-content {
+  display: block;
+  
+}
+
+/* Style the dropdown button */
+.dropbtn {
+  font-size: 16px;
+  border: none;
+  outline: none;
+  color: inherit;
+  background-color: inherit;
+  cursor: pointer;
+}
+
+/* Optional: Hover styles for dropdown links */
+.dropdown-content a {
+  color: white; /* Changed to white for better contrast */
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #000000;
+}
+
+/* Optional: Positioning and style adjustments */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-content {
+  left: 0;
+  top: 100%;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .navbar .container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .nav-links {
+    flex-direction: column;
+  }
+
+  .nav-links li {
+    margin: 5px 0; /* Adjusted spacing for list items */
+  }
+
+  .nav-links li a {
+    padding: 10px 0;
+  }
+
+  .dropdown-content {
+    position: static; /* Dropdown content displays inline */
+    background-color: #b2bfcd; /* Match navbar background */
+    box-shadow: none;
+    text-align: center;
+  }
+
+  .dropdown-content a {
+    color: white; /* Adjusted color for dropdown links */
+    padding: 10px 15px;
+  }
+}

@@ -1,0 +1,29 @@
+{
+    "dishes": [
+      {
+        "id" : 1,
+        "name": "Cola",
+        "price": 50,
+        "image": "https://i.ytimg.com/vi/1V9a6FRgxJM/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLByO1eLYWNRgMjztJtTPQVLQjIwXw"
+      },
+      {
+        "id" : 2,
+        "name": "Lemonade",
+        "price": 40,
+        "image": "https://kidsactivitiesblog.com/wp-content/uploads/2020/04/Homemade-lemonade.jpg"
+      },
+      {
+        "id" : 3,
+        "name": "Iced Tea",
+        "price": 60,
+        "image": "https://images.everydayhealth.com/images/arthritis/rheumatoid-arthritis/iced-tea-recipes-for-rasymptom-relief-1440x810.jpg"
+      },
+      {
+        "id" : 4,
+        "name": "Fruit Punch",
+        "price": 70,
+        "image": "https://content.hy-vee.com/remote.axd/3f4c2184e060ce99111b-f8c0985c8cb63a71df5cb7fd729edcab.ssl.cf2.rackcdn.com/media/10061/punch-it-up.jpg?v=1&mode=crop&width=800&height=640&upscale=false"
+      }
+    ]
+  }
+  

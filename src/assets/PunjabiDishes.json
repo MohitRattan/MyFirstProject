@@ -1,0 +1,29 @@
+{
+    "dishes": [
+      {
+        "id" : 1,
+        "name": "Butter Chicken",
+        "price": 250,
+        "image": "https://www.indianhealthyrecipes.com/wp-content/uploads/2023/04/butter-chicken-recipe.jpg"
+      },
+      {
+        "id" : 2,
+        "name": "Palak Paneer",
+        "price": 200,
+        "image": "https://foodsandflavorsbyshilpi.com/wp-content/uploads/2021/08/FB-Thumnails-website-old-2021-08-30T190407.100.jpg"
+      },
+      {
+        "id" : 3,
+        "name": "Chole Bhature",
+        "price": 180,
+        "image": "https://i.ytimg.com/vi/o-G4V0LNoHE/maxresdefault.jpg"
+      },
+      {
+        "id" : 4,
+        "name": "Paneer Tikka",
+        "price": 220,
+        "image": "https://www.archanaskitchen.com/images/archanaskitchen/1-Author/Neha_Mathur/Achari_Paneer_Tikka_Recipe_Party_Food_400.jpg"
+      }
+    ]
+  }
+  

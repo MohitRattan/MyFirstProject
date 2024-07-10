@@ -1,0 +1,48 @@
+<div class="card-form">
+  <h2>Payment Method</h2>
+  <form #paymentMethodForm="ngForm">
+    <div class="payment-method-row">
+      <label>
+        <input type="radio" name="paymentMethod" value="GPAY" [(ngModel)]="selectedPaymentMethod" (change)="toggleCardForm()">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEv4Zmr2-h3yWsn_6myY3MH8dqVU7AJbeC1eRa2TvE-fRCreOqPuH9ltVXWVWEBKF4P9s&usqp=CAU" alt="GPAY Logo">
+      </label>
+
+      <label>
+        <input type="radio" name="paymentMethod" value="PAYPAL" [(ngModel)]="selectedPaymentMethod" (change)="toggleCardForm()">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAfYQ0oVuq13LUOdELtk2v8tQgeC84FPediA&s" alt="PayPal Logo">
+      </label>
+
+      <label>
+        <input type="radio" name="paymentMethod" value="AMAZON PAY" [(ngModel)]="selectedPaymentMethod" (change)="toggleCardForm()">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEv4Zmr2-h3yWsn_6myY3MH8dqVU7AJbeC1eRa2TvE-fRCreOqPuH9ltVXWVWEBKF4P9s&usqp=CAU" alt="Amazon Pay Logo">
+      </label>
+    </div>
+    
+    <div *ngIf="isCardVisible" class="additional-card">
+      <h2>Enter Card Details</h2>
+      <form #cardForm="ngForm" (ngSubmit)="onSubmit(cardForm)">
+        <label for="cardNumber">Card Number:</label>
+        <input type="text" placeholder="XXXX-XXXX-XXXX-XXXX" id="cardNumber" name="cardNumber" ngModel #cardNumber="ngModel" required pattern="\d{4}-\d{4}-\d{4}-\d{4}">
+        <div *ngIf="cardForm.submitted && cardNumber.invalid" class="error">
+          <div *ngIf="cardNumber.errors?.['required']">Card Number is required.</div>
+          <div *ngIf="cardNumber.errors?.['pattern']">Card Number must be in format XXXX-XXXX-XXXX-XXXX.</div>
+        </div><br><br>
+
+        <label for="expiryDate">Expiry Date:</label>
+        <input type="text" id="expiryDate" placeholder="MM/YYYY" name="expiryDate" ngModel #expiryDate="ngModel" required pattern="(0[1-9]|1[0-2])\/\d{2}">
+        <div *ngIf="cardForm.submitted && expiryDate.invalid" class="error">
+          <div *ngIf="expiryDate.errors?.['required']">Expiry Date is required.</div>
+          <div *ngIf="expiryDate.errors?.['pattern']">Expiry Date must be in MM/YYYY format.</div>
+        </div><br><br>
+
+        <label for="cvv">CVV:</label>
+        <input type="text" id="cvv" placeholder="CVV" name="cvv" ngModel #cvv="ngModel" required minlength="3" maxlength="4">
+        <div *ngIf="cardForm.submitted && cvv.invalid" class="error">
+          <div *ngIf="cvv.errors?.['required']">CVV is required.</div>
+          <div *ngIf="cvv.errors?.['minlength'] || cvv.errors?.['maxlength']">CVV must be 3 or 4 digits.</div>
+        </div><br><br>
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+  </form>
+</div>

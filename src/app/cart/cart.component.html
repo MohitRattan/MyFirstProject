@@ -1,0 +1,55 @@
+<ng-container *ngIf="dishes.length != 0">
+    <div class="container">
+      <div class="card-table">
+        <div class="card-order">
+          <table class="table table-responsive">
+            <thead>
+              <tr>
+                <th>Sr.No</th>
+                <th>Name</th>
+                <th>Image</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Total</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of dishes; let i = index">
+                <td>{{ i + 1 }}</td>
+                <td>{{ item.name }}</td>
+                <td><img style="width: 120px;" [src]="item.image" alt=""></td>
+                <td>{{ item.price }}</td>
+                <td>{{ item.quantity }}</td>
+                <td>{{ item.total }}</td>
+                <td>
+                  <button (click)="removeItem(item)" class="btn btn-danger"><i class="fas fa-trash-alt"></i></button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="total-price">
+            <h3>Total Price: ₹{{ grandTotal }}</h3>
+          </div>
+          <div class="pay-now">
+            <button (click)="payNow()" routerLink="/Address-Details" class="btn btn-success">Pay Now</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ng-container>
+  
+  <ng-container *ngIf="dishes.length == 0">
+    <div class="container">
+      <div class="card">
+        <h5 class="card-title">My Cart</h5>
+      </div>
+      <div class="center">
+        <img src="https://rukminim2.flixcart.com/www/800/800/promos/16/05/2019/d438a32e-765a-4d8b-b4a6-520b560971e8.png?q=90" alt="">
+        <h4>Your Cart is Empty</h4>
+        <h6>Add item to it now</h6>
+        <button routerLink="/home" class="btn btn-primary">Shop Now</button>
+      </div>
+    </div>
+  </ng-container>
+  

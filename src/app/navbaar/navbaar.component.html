@@ -1,0 +1,38 @@
+<div *ngIf="!inLoginPage()">
+    <div *ngIf="!insignup()">
+
+    <nav class="navbar">
+        <div class="container">
+            <a routerLink="/" class="logo">
+                <img src="/assets/images/rk1_logo.png" alt="Logo" style="height: 100px;">
+            </a>
+            <ul class="nav-links">
+                <li><a routerLink="/home" routerLinkActive="active">Home</a></li>
+                <li><a routerLink="/aboutus" routerLinkActive="active">About</a></li>
+                <li class="dropdown">
+                    <a class="dropbtn">Menu</a>
+                    <div class="dropdown-content">
+                        <a routerLink="/north-indian-menu" routerLinkActive="active">North-Indian-Menu</a>
+                        <a routerLink="/south-indian-menu" routerLinkActive="active">South-Indian-Menu</a>
+                        <a routerLink="/punjabi-menu" routerLinkActive="active">Punjabi-Menu</a>
+                        <a routerLink="/Beverages-menu" routerLinkActive="active">Beverages-Menu</a>
+                        <a routerLink="/dessert-menu" routerLinkActive="active">Dessert-Menu</a>
+                    </div>
+                </li>
+                <!-- <li><a routerLink="/adtocart" routerLinkActive="active">CART</a></li> -->
+                <li class="dropdown">
+                    <a class="dropbtn">Profile</a>
+                    <div class="dropdown-content">
+                        <a routerLink="/" routerLinkActive="active">Login</a>
+                        <a routerLink="/signup" routerLinkActive="active">Signup</a>
+                        <a routerLink="/" routerLinkActive="active">logout</a>
+                    </div>
+                </li>
+                <button routerLink="/add-to-cart" class="byn btn-primary">
+                    <i style="font-size: 30px;" class="fas fa-shopping-cart" routerLink="/add-to-cart"></i>
+                    <div style="font-size: 10px;" class="badge bg-danger">{{TotalItem}}</div>
+                </button>
+            </ul>
+        </div>
+    </nav>
+</div>

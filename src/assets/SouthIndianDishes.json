@@ -1,0 +1,29 @@
+{
+    "dishes": [
+      {
+        "id" : 1,
+        "name": "Dosa",
+        "price": 100,
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Dosai_Chutney_Hotel_Saravana_Bhavan.jpg/800px-Dosai_Chutney_Hotel_Saravana_Bhavan.jpg"
+      },
+      {
+        "id" : 2,
+        "name": "Idli",
+        "price": 80,
+        "image": "https://img.sndimg.com/food/image/upload/f_auto,c_thumb,q_55,w_744,ar_5:4/v1/img/recipes/13/93/66/A1iJHQROK3lAAzXFhb3Q_file2%255B1%255D.jpeg"
+      },
+      {
+        "id" : 3,
+        "name": "Uttapam",
+        "price": 120,
+        "image": "https://greenbowl2soul.com/wp-content/uploads/2018/10/Rava-Uttapam-recipe.jpg"
+      },
+      {
+        "id" : 4,
+        "name": "Vada",
+        "price": 60,
+        "image": "https://static.toiimg.com/photo/97008744.cms"
+      }
+    ]
+  }
+  

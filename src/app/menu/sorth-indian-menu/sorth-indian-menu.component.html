@@ -1,0 +1,14 @@
+
+
+<div class="container">
+    <div class="row">
+        <ng-container *ngFor="let dish of SouthIndianDishes">
+            <div class="card col-md-3">
+                <img src="{{dish.image}}">
+                <h5 style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">ITEM:{{dish.name}}</h5>
+                <p>{{dish.price}}</p>
+                <button class="btn btn-primary"(click)=addToCart(dish)>Add to cart</button>
+            </div>        
+        </ng-container>  
+    </div>
+ </div>

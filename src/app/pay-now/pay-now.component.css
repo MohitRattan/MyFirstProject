@@ -1,0 +1,102 @@
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f0f0f0;
+  margin: 0; /* Remove default body margin */
+  padding: 20px; /* Add padding for better spacing */
+}
+
+.container {
+  display: flex;
+  flex-direction: column; /* Adjust to column layout on smaller screens */
+  gap: 20px;
+  max-width: 800px; /* Adjust max-width for better readability */
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box; /* Ensure padding is included in width calculation */
+}
+
+.card-form, .additional-card .card {
+  background: linear-gradient(to right, #000000, #a9a9a9);
+
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 100%;
+  box-sizing: border-box; /* Ensure padding is included in width calculation */
+}
+
+.card-form h2 {
+  margin-bottom: 20px;
+}
+
+.card-form label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.card-form input {
+  width: 100%; /* Full width input */
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box; /* Ensure padding is included in width calculation */
+}
+
+.card-form button {
+  width: 100%;
+  padding: 10px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.card-form button:hover {
+  background-color: #218838;
+}
+
+.error {
+  color: red;
+  font-size: 0.9em;
+}
+
+.payment-method-row {
+  display: flex;
+  flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+  gap: 10px; /* Adjust spacing between items */
+}
+
+.payment-method-row label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center; /* Center align text */
+  width: calc(50% - 5px); /* Two items per row, adjusting for gap */
+  max-width: 200px; /* Limit max width of each item */
+  cursor: pointer;
+}
+
+.payment-method-row label img {
+  max-width: 100px; /* Adjust maximum width of the logo image */
+  height: auto;
+  margin-bottom: 5px; /* Adjust spacing below the image */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .container {
+    padding: 10px; /* Adjust padding for smaller screens */
+  }
+
+  .payment-method-row label {
+    width: 100%; /* Full width for labels on smaller screens */
+    max-width: none; /* Remove max-width constraint */
+  }
+}

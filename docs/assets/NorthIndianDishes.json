@@ -1,0 +1,65 @@
+{
+    "dishes": [
+      {
+        "id" : 1,
+        "name": "Paneer Tikka",
+        "price": 250,
+        "image": "https://www.archanaskitchen.com/images/archanaskitchen/1-Author/Neha_Mathur/Achari_Paneer_Tikka_Recipe_Party_Food_400.jpg"
+      },
+      {
+        "id" : 2,
+        "name": "Chole Bhature",
+        "price": 200,
+        "image": "https://i.ytimg.com/vi/o-G4V0LNoHE/maxresdefault.jpg"
+      },
+      {
+        "id" : 3,
+        "name": "Dal Makhani",
+        "price": 180,
+        "image": "https://www.cookwithmanali.com/wp-content/uploads/2019/04/Restaurant-Style-Dal-Makhani.jpg"
+      },
+      {
+        "id" : 4,
+        "name": "Aloo Paratha",
+        "price": 100,
+        "image": "https://www.seriouseats.com/thmb/tRWGfWOQV3O7P1YveeDtNRS1JBY=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/__opt__aboutcom__coeus__resources__content_migration__serious_eats__seriouseats.com__2021__01__20210106-aloo-parathas-nik-sharma-13-52b77ba4cbad4c4f844f2f88910b2b53.jpg"
+      },
+      {
+        "id" : 5,
+        "name": "Mutter Paneer",
+        "price": 220,
+        "image": "https://pipingpotcurry.com/wp-content/uploads/2022/04/Matar-Paneer-in-instant-pot-Piping-Pot-Curry.jpg"
+      },
+      {
+        "id" : 6,
+        "name": "Bhindi Masala",
+        "price": 150,
+        "image": "https://www.foodandwine.com/thmb/A5r5askIZUtquHJH51qoxxM56V4=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/Bhindi-Masala-with-Tomato-Tarka-Stir-Fried-Okra-with-Tomatoes-and-Spices-FT-2-RECIPE0823-c6c1c867b8ba415c892868ed74556aac.jpg"
+      },
+      {
+        "id" : 7,
+        "name": "Lassi",
+        "price": 80,
+        "image": "https://pipingpotcurry.com/wp-content/uploads/2021/05/Lassi-in-a-glass.jpg"
+      },
+      {
+        "id" : 8,
+        "name": "Aloo Gobi",
+        "price": 160,
+        "image": "https://static01.nyt.com/images/2023/12/21/multimedia/ND-Aloo-Gobi-gkwc/ND-Aloo-Gobi-gkwc-square640.jpg"
+      },
+      {
+        "id" : 9,
+        "name": "Baingan Bharta",
+        "price": 190,
+        "image": "https://www.indianhealthyrecipes.com/wp-content/uploads/2022/06/baingan-bharta-500x375.jpg"
+      },
+      {
+        "id" : 10,
+        "name": "Palak Paneer",
+        "price": 240,
+        "image": "https://www.vegrecipesofindia.com/wp-content/uploads/2021/06/palak-paneer-3.jpg"
+      }
+    ]
+  }
+  
