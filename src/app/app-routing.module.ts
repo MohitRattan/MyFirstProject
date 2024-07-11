@@ -13,22 +13,23 @@ import { CARTComponent } from './cart/cart.component';
 import { PayNowComponent } from './pay-now/pay-now.component';
 import { AddressFormComponent } from './address-form/address-form.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { authGuard } from './auth.guard';
 const routes: Routes = [
   {path:"",redirectTo:'/login',pathMatch:'full'},
-  { path: 'login', component: LoginComponent },
+  { path: 'login', component: LoginComponent ,},
   {path:'signup',component:SignupComponent},
-  {path:'home',component:HomeComponent},
-  {path:'aboutus',component:AboutusComponent},
-  {path:'north-indian-menu',component:NorthIndianMenuComponent},
-  {path:'south-indian-menu',component:SorthIndianMenuComponent},
-  {path:'punjabi-menu',component:PunjabiMenuComponent},
-  {path:'Beverages-menu',component:BeveragesMenuComponent},
-  {path:'dessert-menu',component:DessertMenuComponent},
-  {path:'add-to-cart',component:CARTComponent},
-  {path:'Pay-Now',component:PayNowComponent},
-  {path:'Address-Details',component:AddressFormComponent},
-  {path:'dashboard',component:DashboardComponent}
-
+  {path:'home',component:HomeComponent,canActivate:[authGuard]},
+  {path:'aboutus',component:AboutusComponent,canActivate:[authGuard]},
+  {path:'north-indian-menu',component:NorthIndianMenuComponent,canActivate:[authGuard]},
+  {path:'south-indian-menu',component:SorthIndianMenuComponent,canActivate:[authGuard]},
+  {path:'punjabi-menu',component:PunjabiMenuComponent,canActivate:[authGuard]},
+  {path:'Beverages-menu',component:BeveragesMenuComponent,canActivate:[authGuard]},
+  {path:'dessert-menu',component:DessertMenuComponent,canActivate:[authGuard]},
+  {path:'add-to-cart',component:CARTComponent,canActivate:[authGuard]},
+  {path:'Pay-Now',component:PayNowComponent,canActivate:[authGuard]},
+  {path:'Address-Details',component:AddressFormComponent,canActivate:[authGuard]},
+  {path:'dashboard',component:DashboardComponent,canActivate:[authGuard]},
+  { path: '**', redirectTo: 'home' }
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

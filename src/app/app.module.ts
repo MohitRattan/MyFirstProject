@@ -23,6 +23,7 @@ import { PayNowComponent } from './pay-now/pay-now.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AddressFormComponent } from './address-form/address-form.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { AuthService } from './auth.service';
   
 @NgModule({
   declarations: [
@@ -52,9 +53,9 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule, 
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
