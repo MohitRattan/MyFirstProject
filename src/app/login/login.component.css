@@ -1,11 +1,18 @@
+.main {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	background: linear-gradient(to left, #000000, #a9a9a9);
+}
+
 .login-container {
-  max-width: 400px;
-  margin: 0 auto;
-  padding: 20px;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  background-color: #fff;
+  background: linear-gradient(to left, #000000, #a9a9a9);
+	padding: 20px;
+	border-radius: 10px;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	max-width: 400px;
+	width: 100%;
 }
 
 .login-container form {
@@ -34,6 +41,7 @@
   border-radius: 4px;
   cursor: pointer;
   font-size: 16px;
+  margin-bottom: 16px;
 }
 
 .login-container button:hover {
@@ -57,4 +65,11 @@
   font-size: 14px;
   margin-top: -12px;
   margin-bottom: 8px;
+}
+.login-container[_ngcontent-ng-c712455436] input[type="email"][_ngcontent-ng-c712455436], .login-container[_ngcontent-ng-c712455436] input[type="password"][_ngcontent-ng-c712455436] {
+  padding: 10px;
+  margin-bottom: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 360px;
 }
