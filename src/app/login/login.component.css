@@ -73,3 +73,22 @@
   border-radius: 4px;
   width: 360px;
 }
+
+.login-container[_ngcontent-ng-c370947924] input[type="email"][_ngcontent-ng-c370947924], .login-container[_ngcontent-ng-c370947924] input[type="password"][_ngcontent-ng-c370947924] {
+  padding: 10px;
+  margin-bottom: 0px;
+  border: 12px solid #ccc;
+  border-radius: 10px;
+  width: 365px;
+  border-color: black;
+}
+.login-container[_ngcontent-ng-c370947924] button[_ngcontent-ng-c370947924] {
+  text-align: start;
+	background: linear-gradient(to left, #a9a9a9, #000000);
+  padding: 10px;
+  margin-bottom: 0px;
+  border: 12px solid #ccc;
+  border-radius: 10px;
+  width: 365px;
+  border-color: black;
+}

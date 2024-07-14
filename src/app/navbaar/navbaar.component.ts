@@ -102,4 +102,8 @@ export class NavbaarComponent implements OnInit {
     this.authservice.login();
     this.router.navigate(['home']);
   }
+  logout(){
+    this.authservice.logout();
+    this.router.navigate(['login']);
+  }
 }

@@ -12,7 +12,6 @@
       </div>
     </div>
     <div>
-      <!-- <label for="password">Password:</label> -->
       <input id="password" placeholder="Password" formControlName="password" type="password" />
       <div *ngIf="submitted && formControls['password'].errors">
         <small *ngIf="formControls['password'].errors['required']">Password is required</small>
