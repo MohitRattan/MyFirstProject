@@ -24,6 +24,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AddressFormComponent } from './address-form/address-form.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AuthService } from './auth.service';
+import { AuthGuard } from './auth.guard';
   
 @NgModule({
   declarations: [
@@ -55,7 +56,7 @@ import { AuthService } from './auth.service';
     ReactiveFormsModule,
     BrowserAnimationsModule, 
   ],
-  providers: [AuthService],
+  providers: [AuthService, AuthGuard],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

@@ -1,29 +1,27 @@
 <div class="main">
-<div class="login-container">
-  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-   <h1 style="justify-content: center;">LOGIN</h1>
-    <div>
-      
-      <!-- <label for="email">Email:</label> -->
-      <input id="email" placeholder="Email" formControlName="email" type="email" />
-      <div *ngIf="submitted && formControls['email'].errors">
-        <small *ngIf="formControls['email'].errors['required']">Email is required</small>
-        <small *ngIf="formControls['email'].errors['email']">Invalid email format</small>
+  <div class="login-container">
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <h1 style="justify-content: center;">LOGIN</h1>
+      <div>
+        <input id="email" placeholder="Email" formControlName="email" type="email" />
+        <div *ngIf="submitted && formControls['email'].errors">
+          <small *ngIf="formControls['email'].errors['required']">Email is required</small>
+          <small *ngIf="formControls['email'].errors['email']">Invalid email format</small>
+        </div>
       </div>
-    </div>
-    <div>
-      <input id="password" placeholder="Password" formControlName="password" type="password" />
-      <div *ngIf="submitted && formControls['password'].errors">
-        <small *ngIf="formControls['password'].errors['required']">Password is required</small>
-        <small *ngIf="formControls['password'].errors['minlength']">Password must be at least 8 characters long</small>
+      <div>
+        <input id="password" placeholder="Password" formControlName="password" type="password" />
+        <div *ngIf="submitted && formControls['password'].errors">
+          <small *ngIf="formControls['password'].errors['required']">Password is required</small>
+          <small *ngIf="formControls['password'].errors['minlength']">Password must be at least 8 characters long</small>
+        </div>
       </div>
-    </div>
-    <button type="submit"[disabled]="loginForm.invalid">Login</button>
-    <br>
-    <button type="submit" routerLink="/signup">Signup</button>
-    <div *ngIf="loginError">
-      <small>{{ loginError }}</small>
-    </div>
-  </form>
-</div>
+      <button type="submit" [disabled]="loginForm.invalid">Login</button>
+      <br>
+      <button type="button" routerLink="/signup">Signup</button>
+      <div *ngIf="loginError">
+        <small>{{ loginError }}</small>
+      </div>
+    </form>
+  </div>
 </div>

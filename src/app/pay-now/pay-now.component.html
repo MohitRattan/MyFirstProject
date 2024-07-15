@@ -41,7 +41,8 @@
           <div *ngIf="cvv.errors?.['required']">CVV is required.</div>
           <div *ngIf="cvv.errors?.['minlength'] || cvv.errors?.['maxlength']">CVV must be 3 or 4 digits.</div>
         </div><br><br>
-        <button type="submit">Submit</button>
+        <button type="submit" [disabled]="!cardForm.form.valid">Submit</button>
+
       </form>
     </div>
   </form>

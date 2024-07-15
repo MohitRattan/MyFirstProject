@@ -15,7 +15,8 @@ export interface Tata{
   providedIn: 'root'
 })
 export class SignupService {
-  private apiUrl = 'https://localhost:7083/api/SignUp/'; // Update with your backend API URL
+  private apiUrl = 'https://localhost:7083/api/SignUp'; 
+   // Update with your backend API URL
 
   constructor(private http: HttpClient) {}
      
@@ -23,5 +24,10 @@ export class SignupService {
   {
     return this.http.post<Tata>(`${this.apiUrl}/Add`, tata);
   }
+
+loginUser(email: string, password: string): Observable<any> {
+    return this.http.post<any>(`${this.apiUrl}/login`, { email, password });
   }
+ 
+  } 
 

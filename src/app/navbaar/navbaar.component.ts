@@ -99,7 +99,7 @@ export class NavbaarComponent implements OnInit {
   }
 
   onLogin() {
-    this.authservice.login();
+    this.authservice.login("email","password");
     this.router.navigate(['home']);
   }
   logout(){
