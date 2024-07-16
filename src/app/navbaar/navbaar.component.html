@@ -24,8 +24,8 @@
                         <div class="dropdown-content">
                             <a *ngIf="isLoggedIn" routerLink="/login" routerLinkActive="active">Login</a>
                             <a *ngIf="isLoggedIn" routerLink="/signup" routerLinkActive="active">Signup</a>
-                            <a *ngIf="!isLoggedIn" routerLink="/" routerLinkActive="active"
-                                (click)="authservice.logout()">Logout</a>
+                            <!-- <a *ngIf="!isLoggedIn" routerLink="/" routerLinkActive="active"
+                                (click)="authservice.logout()">Logout</a> -->
                         </div>
                     </li>
                     <button routerLink="/add-to-cart" class="byn btn-primary">

@@ -1,134 +1,70 @@
-// import { Component, OnInit } from '@angular/core';
-// import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-// import { Router } from '@angular/router';
-// import { AuthService } from '../auth.service';
-// import { SignupService } from '../signup.service';
-
-// @Component({
-//   selector: 'app-login',
-//   templateUrl: './login.component.html',
-//   styleUrls: ['./login.component.css']
-// })
-// export class LoginComponent implements OnInit {
-//   loginForm: FormGroup;
-//   submitted = false;
-//   loginError: string | null = null;
-
-//   constructor(
-//     private formBuilder: FormBuilder,
-//     private authService: AuthService,
-//     private router: Router,
-//     private Sign : SignupService
-//   ) {
-//     this.loginForm = this.formBuilder.group({
-//       email: ['', [Validators.required, Validators.email]],
-//       password: ['', [Validators.required, Validators.minLength(8)]]
-//     });
-//   }
-
-//   ngOnInit(): void {}
-
-//   get formControls() {
-//     return this.loginForm.controls;
-//   }
-
-//   onSubmit() {
-//     this.submitted = true;
-
-//     if (this.loginForm.invalid) {
-//       return;
-//     }
-
-//     const { email, password } = this.loginForm.value;
-//     this.authService.login(email, password).subscribe(
-//       success => {
-//         if (success) {
-//           this.router.navigate(['/']);
-//         } else {
-//           this.loginError = 'Invalid email or password';
-//         }
-//       },
-//       error => {
-//         this.loginError = 'An error occurred. Please try again later.';
-//       }
-//     );
-//   }
-// }
-
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { AuthService } from '../auth.service';
-import { SignupService } from '../signup.service';
+import { AuthService } from '../auth.service'; // Adjust the path as per your project structure
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent implements OnInit {
-  loginForm: FormGroup;
-  submitted = false;
-  loginError: string | null = null;
+export class LoginComponent {
+  public loginForm!: FormGroup
 
-  constructor(
-    private formBuilder: FormBuilder,
-    private authService: AuthService,
-    private router: Router,
-    private signupService: SignupService
-  ) {
-    this.loginForm = this.formBuilder.group({
-      email: ['', [Validators.required, Validators.email]],
-      password: ['', [Validators.required, Validators.minLength(6)]]
-    });
+  constructor(private formbuilder: FormBuilder,private http: HttpClient, private router: Router) { }
+
+  ngOnInit(): void {
+    this.loginForm = this.formbuilder.group({
+      email: [''],
+      password: ['', Validators.required]
+    })
   }
-
-  ngOnInit(): void {}
-
-  get formControls() {
-    return this.loginForm.controls;
-  }
-
-  onSubmit() {
-    this.submitted = true;
-
-    if (this.loginForm.invalid) {
-      return;
-    }
-
-    const { email, password } = this.loginForm.value;
-
-    // Example of using both AuthService and SignupService
-
-  
-    this.authService.login(email, password).subscribe(
-      success => {
-        if (success) {
-          this.router.navigate(['/']);
-        } else {
-          // If login with AuthService fails, attempt with SignupService (assuming it's for different purposes)
-          this.signupService.loginUser(email, password).subscribe(
-            (response) => {
-              debugger;
-              this.authService.isLoggedIn
-              if (response.success) {
-                this.router.navigate(['/home']);
-              } else {
-                this.loginError = 'Invalid email or password';
-              }
-            },
-            error => {
-              this.loginError = 'An error occurred. Please try again later.';
-            }
-          );
-        }
-      },
-      error => {
-        // Handle AuthService login error
-        // Optionally, you could try the SignupService login here as well
-        this.loginError = 'An error occurred. Please try again later.';
+  login(){
+    this.http.get<any>("http://localhost:3000/signupUser")
+    .subscribe(res=>{
+      const user = res.find((a:any)=>{
+        return a.email === this.loginForm.value.email && a.password === this.loginForm.value.password 
+      });
+      if(user){
+        alert('Login Succesful');
+        // this.loginForm.reset()
+      this.router.navigate(["/home"])
+      }else{
+        alert("user not found") 
       }
-    );
+    },err=>{
+      alert("Something went wrong")
+    })
   }
-}
 
+  // loginForm: FormGroup;
+  // submitted = false;
+
+  // constructor(
+  //   private formBuilder: FormBuilder,
+  //   private authService: AuthService,
+  //   private router: Router
+  // ) {
+  //   this.loginForm = this.formBuilder.group({
+  //     email: ['', [Validators.required, Validators.email]],
+  //     password: ['', [Validators.required, Validators.minLength(8)]]
+  //   });
+  // }
+
+  // get f() {
+  //   return this.loginForm.controls;
+  // }
+
+  // onSubmit() {
+  //   this.submitted = true;
+
+  //   if (this.loginForm.invalid) {
+  //     return;
+  //   }
+  //   localStorage.setItem('token', 'your-auth-token');
+
+  //   // Redirect to home page
+  //   this.router.navigate(['/home']);
+  // }
+}

@@ -15,20 +15,20 @@ import { AddressFormComponent } from './address-form/address-form.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AuthGuard } from './auth.guard';
 const routes: Routes = [
-  {path:"",redirectTo:'/login',pathMatch:'full'},
+  {path: "", redirectTo: "login", pathMatch: "full"},
   { path: 'login', component: LoginComponent ,},
-  {path:'signup',component:SignupComponent},
-  {path:'home',component:HomeComponent,canActivate:[AuthGuard]},
-  {path:'aboutus',component:AboutusComponent,canActivate:[AuthGuard]},
-  {path:'north-indian-menu',component:NorthIndianMenuComponent,canActivate:[AuthGuard]},
-  {path:'south-indian-menu',component:SorthIndianMenuComponent,canActivate:[AuthGuard]},
-  {path:'punjabi-menu',component:PunjabiMenuComponent,canActivate:[AuthGuard]},
-  {path:'Beverages-menu',component:BeveragesMenuComponent,canActivate:[AuthGuard]},
-  {path:'dessert-menu',component:DessertMenuComponent,canActivate:[AuthGuard]},
-  {path:'add-to-cart',component:CARTComponent,canActivate:[AuthGuard]},
-  {path:'Pay-Now',component:PayNowComponent,canActivate:[AuthGuard]},
-  {path:'Address-Details',component:AddressFormComponent,canActivate:[AuthGuard]},
-  {path:'dashboard',component:DashboardComponent,canActivate:[AuthGuard]},
+  {path:'signUp',component:SignupComponent},
+  {path:'home',component:HomeComponent},
+  {path:'aboutus',component:AboutusComponent},
+  {path:'north-indian-menu',component:NorthIndianMenuComponent},
+  {path:'south-indian-menu',component:SorthIndianMenuComponent},
+  {path:'punjabi-menu',component:PunjabiMenuComponent},
+  {path:'Beverages-menu',component:BeveragesMenuComponent},
+  {path:'dessert-menu',component:DessertMenuComponent},
+  {path:'add-to-cart',component:CARTComponent},
+  {path:'Pay-Now',component:PayNowComponent},
+  {path:'Address-Details',component:AddressFormComponent},
+  {path:'dashboard',component:DashboardComponent},
   { path: '**', redirectTo: 'home' }
 ];
 @NgModule({

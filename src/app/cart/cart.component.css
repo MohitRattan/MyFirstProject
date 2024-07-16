@@ -1,4 +1,4 @@
-.card {
+/* .card {
     height: auto;
     padding: 25px;
     margin: 25px;
@@ -15,8 +15,6 @@
   }
   
   .card-table {
-    background: linear-gradient(to right, #000000, #a9a9a9);
-    /* border: 1px solid rgba(0, 0, 0, 0.2); */
     border-radius: 0.25rem;
     padding: 15px;
     
@@ -30,12 +28,7 @@
     border-radius: 3px !important;
   }
   
-  /* Responsive Adjustments */
-  @media (max-width: 768px) {
-    .card {
-      margin: 15px;
-      padding: 15px;
-    }
+
   
     .center img {
       height: auto;
@@ -46,4 +39,146 @@
     .center .btn {
       padding: 10px 20px;
     }
+   */
+   /* General Styles */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.card-table {
+  margin-top: 20px;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.pointer-cursor {
+  cursor: pointer;
+}
+
+.total-price, .pay-now {
+  margin-top: 20px;
+  text-align: right;
+}
+
+/* Small Devices (Phones, 600px and down) */
+@media (max-width: 600px) {
+  .table-responsive {
+    overflow-x: auto;
   }
+
+  .table {
+    width: 100%;
+    display: block;
+  }
+
+  .card-table, .total-price, .pay-now {
+    text-align: center;
+  }
+
+  th, td {
+    display: block;
+    text-align: right;
+  }
+
+  th::before, td::before {
+    content: attr(data-label);
+    float: left;
+    font-weight: bold;
+  }
+
+  .pay-now button {
+    width: 100%;
+  }
+
+  img {
+    width: 80px; /* Smaller image for phones */
+  }
+}
+
+/* Medium Devices (Tablets, 600px to 992px) */
+@media (min-width: 600px) and (max-width: 992px) {
+  .table {
+    display: table;
+  }
+
+  th, td {
+    display: table-cell;
+    text-align: left;
+  }
+
+  .pay-now button {
+    width: auto;
+  }
+
+  img {
+    width: 100px; /* Larger image for tablets */
+  }
+}
+
+/* Large Devices (Desktops, 992px and up) */
+@media (min-width: 992px) {
+  .table {
+    display: table;
+  }
+
+  th, td {
+    display: table-cell;
+    text-align: left;
+  }
+
+  .pay-now button {
+    width: auto;
+  }
+
+  img {
+    width: 120px; /* Larger image for desktops */
+  }
+}
+
+/* Empty Cart Styles */
+.center {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.card {
+  margin-top: 20px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.card-title {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.center img {
+  max-width: 100px;
+  margin-bottom: 20px;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  border: none;
+  padding: 10px 20px;
+  color: #fff;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 10px;
+}
